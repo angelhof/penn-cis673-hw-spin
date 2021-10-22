@@ -20,6 +20,9 @@ The lecture combines material from the following resources:
 
 
 
+
+
+
 ## Basic Promela Syntax and Program Structure
 
 Before taking a look at how to use Spin, we will start from the Promela language and its syntax.
