@@ -19,6 +19,8 @@ Initially, `cnt` is set to `0` and `queue` is all `0`s except for the first cell
 
 Each process first atomically gets and then increments `cnt` and stores its current value locally. Then it waits until the position indicated by `cnt` in the `queue` is set to true (since `cnt` can grow larger than the size of the array we use modulo arithmetic, i.e., `val % NTHREADS`, to get an array index). When its cell is set to true, it enters the critical section, sets its index in the `queue` to `false`, and then when it exits the critical section sets the next cell in the `queue` array to `true` (passing control to the next process).
 
+The processes should do the above steps in an infinite loop, continuously trying to access the critical section.
+
 ### Part 1
 
 Formally define the algorithm in Promela. This requires creating a model of the processes together with the necessary global state with which they communicate. For part one, only model two processes.
