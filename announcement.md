@@ -13,7 +13,7 @@ Your goal is to formally define it using Promela, and then verify that it satisf
 
 Suppose that you have `NTHREADS` processes that can content for access to the critical section. 
 
-The global state of the algorithm includes an `NTHREADS`-cell array of booleans (that we will call `queue`) and a global counter variable (that we call `cnt`).
+The global state of the algorithm includes an `NTHREADS`-cell array of booleans (that we will call `queue`) and a global counter variable of type `byte` (that we call `cnt`). It is important that `cnt` is of type `byte` so that the size of the state space is not too big.
 
 Initially, `cnt` is set to `0` and `queue` is all `0`s except for the first cell which is set to `1`.
 
